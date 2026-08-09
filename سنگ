@@ -1,0 +1,59 @@
+import random
+
+while True:
+
+    print("\n--- سنگ کاغذ قیچی ---")
+    print("1. سنگ")
+    print("2. کاغذ")
+    print("3. قیچی")
+    print("4. خروج")
+
+    user = input("انتخاب شما: ")
+
+    if user == "4":
+        print("بازی تمام شد.")
+        break
+
+    if user == "1":
+        user_choice = "سنگ"
+
+    if user == "2":
+        user_choice = "کاغذ"
+
+    if user == "3":
+        user_choice = "قیچی"
+
+    computer_number = random.randint(1, 3)
+
+    if computer_number == 1:
+        computer_choice = "سنگ"
+
+    if computer_number == 2:
+        computer_choice = "کاغذ"
+
+    if computer_number == 3:
+        computer_choice = "قیچی"
+
+    print("انتخاب شما:", user_choice)
+    print("انتخاب کامپیوتر:", computer_choice)
+
+    if user_choice == computer_choice:
+        print("مساوی شد!")
+
+    if user_choice == "سنگ" and computer_choice == "قیچی":
+        print("شما برنده شدید!")
+
+    if user_choice == "کاغذ" and computer_choice == "سنگ":
+        print("شما برنده شدید!")
+
+    if user_choice == "قیچی" and computer_choice == "کاغذ":
+        print("شما برنده شدید!")
+
+    if user_choice == "سنگ" and computer_choice == "کاغذ":
+        print("کامپیوتر برنده شد!")
+
+    if user_choice == "کاغذ" and computer_choice == "قیچی":
+        print("کامپیوتر برنده شد!")
+
+    if user_choice == "قیچی" and computer_choice == "سنگ":
+        print("کامپیوتر برنده شد!")
