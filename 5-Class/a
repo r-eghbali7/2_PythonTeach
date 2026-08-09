@@ -1,0 +1,67 @@
+users = {}
+
+while True:
+
+    print("\n1. ثبت نام")
+    print("2. لاگین")
+    print("3. خروج")
+
+    choice = input("انتخاب کنید: ")
+
+    # ثبت نام
+    if choice == "1":
+
+        if len(users) == 3:
+            print("ظرفیت ثبت نام تکمیل شده است.")
+
+        else:
+
+            username = input("نام کاربری: ")
+            password = input("رمز عبور: ")
+
+            has_number = False
+            has_letter = False
+
+            i = 0
+
+            while i < len(password):
+
+                if password[i] >= "0" and password[i] <= "9":
+                    has_number = True
+
+                if (password[i] >= "a" and password[i] <= "z") or \
+                   (password[i] >= "A" and password[i] <= "Z"):
+                    has_letter = True
+
+                i += 1
+
+            if has_number and has_letter:
+
+                users[username] = password
+
+                print("شما با موفقیت ثبت نام شدید.")
+
+            else:
+
+                print("رمز عبور باید ترکیبی از عدد و حروف باشد.")
+                print("ثبت نام انجام نشد.")
+
+    # لاگین
+    if choice == "2":
+
+        username = input("نام کاربری: ")
+        password = input("رمز عبور: ")
+
+        if username in users and users[username] == password:
+
+            print("شما با موفقیت وارد شدید.")
+
+        else:
+
+            print("نام کاربری یا رمز عبور اشتباه است.")
+
+    # خروج
+    if choice == "3":
+
+        print("برنامه بسته شد.")
+        break
